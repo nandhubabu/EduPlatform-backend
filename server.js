@@ -26,7 +26,9 @@ const corsOptions = {
     "http://127.0.0.1:5173", 
     "http://127.0.0.1:5174",
     process.env.FRONTEND_URL,    // Production frontend URL from Vercel
-    "https://your-actual-frontend-domain.vercel.app" // Replace with your actual Vercel URL
+    "https://edu-platform-frontend-psi.vercel.app", // Vercel production URL
+    "https://edu-platform-frontend-git-main-nandhubabus-projects.vercel.app", // Vercel git URL
+    "https://edu-platform-frontend-5je9u1qjk-nandhubabus-projects.vercel.app"
   ].filter(Boolean), // Remove undefined values
   credentials: true, // This is important for cookies
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
