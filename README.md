@@ -4,7 +4,7 @@
 
 This repository contains the backend service for the EduPlatform (MERN Dev Journey) application. It is built using Node.js and Express.js, providing robust APIs for user management, course content delivery, progress tracking, and AI-driven interactions.
 
-## 🚀 Features
+## Features
 
 - **Authentication & Authorization**: Secure user registration, login, and role-based access control using JWT and bcrypt.
 - **Course Management**: APIs for retrieving courses, detailed sections, and structured learning paths.
@@ -13,7 +13,7 @@ This repository contains the backend service for the EduPlatform (MERN Dev Journ
 - **Security**: Hardened with `helmet`, `cors`, and `express-rate-limit` to protect against common web vulnerabilities and abuse.
 - **File Uploads**: Supports multipart/form-data for file uploads using `multer`.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Runtime**: Node.js
 - **Framework**: Express.js
@@ -22,7 +22,7 @@ This repository contains the backend service for the EduPlatform (MERN Dev Journ
 - **Security**: Helmet, Express Rate Limit, CORS
 - **AI Tools**: Google Generative AI
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -36,14 +36,14 @@ This repository contains the backend service for the EduPlatform (MERN Dev Journ
 └── package.json          # Project metadata and dependencies
 ```
 
-## ⚙️ Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 - **Node.js** (v16.x or higher)
 - **npm** (v7.x or higher)
 - **MongoDB** (Local instance or MongoDB Atlas URI)
 
-## 💻 Installation
+## Installation
 
 1. **Clone the repository:**
    ```bash
@@ -56,7 +56,7 @@ Before you begin, ensure you have met the following requirements:
    npm install
    ```
 
-## 🔑 Environment Variables
+## Environment Variables
 
 Create a `.env` file in the root directory and add the following required environment variables:
 
@@ -76,7 +76,7 @@ JWT_SECRET=your_jwt_secret_key
 # GEMINI_API_KEY=your_google_gemini_api_key (if applicable)
 ```
 
-## 🚀 Running the Application
+## Running the Application
 
 **Development Mode:**
 Runs the server with Nodemon, automatically restarting on file changes.
@@ -89,7 +89,7 @@ npm run dev
 npm start
 ```
 
-## 📡 API Endpoints Overview
+## API Endpoints Overview
 
 The API is mounted at `/api/v1/`.
 
@@ -99,10 +99,10 @@ The API is mounted at `/api/v1/`.
 - **Progress**: `/api/v1/progress` - Tracking and updating user progress.
 - **Chatbot**: `/api/v1/chatbot` - Endpoints for AI chatbot interactions.
 
-## 🛡️ Error Handling
+## Error Handling
 
 The application uses a centralized error-handling middleware (`middlewares/errorMiddleware.js`) to ensure consistent API responses. All unhandled routes will return a standardized `404 Route not found` response containing a list of available endpoints.
 
-## 📄 License
+## License
 
 This project is licensed under the ISC License.
