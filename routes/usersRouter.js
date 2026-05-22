@@ -48,11 +48,7 @@ usersRouter.get(
   isAuthenticated,
   usersController.privateProfile
 );
-usersRouter.get(
-  "/checkAuthenticated",
-  isAuthenticated,
-  usersController.checkAuthenticated
-);
+usersRouter.get("/checkAuthenticated", usersController.checkAuthenticated);
 //logout
 usersRouter.post("/logout", usersController.logout);
 

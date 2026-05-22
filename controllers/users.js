@@ -350,13 +350,23 @@ const usersController = {
 
     res.json(response);
   }),
-  // Check if user is authenticated
+  // Check if user is authenticated (no auth middleware — must work when logged out)
   checkAuthenticated: asyncHandler(async (req, res) => {
-    const token = req.cookies["token"];
+    let token;
+
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith("Bearer")
+    ) {
+      token = req.headers.authorization.split(" ")[1];
+    } else if (req.cookies.token) {
+      token = req.cookies.token;
+    }
 
     if (!token) {
-      return res.status(401).json({ isAuthenticated: false });
+      return res.status(200).json({ isAuthenticated: false });
     }
+
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
@@ -369,11 +379,11 @@ const usersController = {
         },
       });
       if (!user) {
-        return res.status(401).json({ isAuthenticated: false });
+        return res.status(200).json({ isAuthenticated: false });
       }
-      return res.status(200).json({ isAuthenticated: true, user: user });
+      return res.status(200).json({ isAuthenticated: true, user });
     } catch (error) {
-      return res.status(401).json({ isAuthenticated: false, error });
+      return res.status(200).json({ isAuthenticated: false });
     }
   }),
   logout: asyncHandler(async (req, res) => {
